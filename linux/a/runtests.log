@@ -1,0 +1,570 @@
+starting build
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f mysh 
+Trying to build project using make
+make
+gcc -o mysh -Wall -g mysh.c
+
+
+test build PASSED
+ (build project using make)
+
+starting linttest
+
+**********************************************************************
+
+Test linttest
+Lint test for C programming style
+
+**********************************************************************
+/u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py --extensions c,h mysh.c
+Done processing mysh.c
+Total errors found: 0
+/u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py --extensions c,h mysh2.c
+mysh2.c:12:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:14:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:14:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:15:  Missing space before ( in while(  [whitespace/parens] [5]
+mysh2.c:19:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:20:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:20:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+mysh2.c:21:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:21:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+mysh2.c:24:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:25:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:26:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:26:  Else clause should be indented at the same level as if. Ambiguous nested if/else chains require braces.  [readability/braces] [4]
+mysh2.c:34:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:34:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+mysh2.c:34:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:37:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:37:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:44:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:44:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:45:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+mysh2.c:45:  Missing space before ( in if(  [whitespace/parens] [5]
+mysh2.c:46:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:49:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:50:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:54:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:55:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:55:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:55:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:56:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:59:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:61:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:65:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:68:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:69:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:70:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:73:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:74:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:76:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:76:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:77:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:78:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:78:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:86:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:87:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:88:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:89:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:90:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:90:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:91:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:91:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:93:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:95:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:95:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:99:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:99:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:100:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:101:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:101:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:101:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:103:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:104:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:111:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:111:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:112:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:114:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:114:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:116:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:116:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:120:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:120:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:122:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:125:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:126:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:126:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:127:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:127:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:128:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:129:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:130:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:131:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+mysh2.c:131:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:131:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:133:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:134:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:135:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:137:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:140:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:142:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:146:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:146:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:148:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+mysh2.c:148:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+mysh2.c:149:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:150:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:152:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:153:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:154:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:155:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:157:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:158:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:158:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:158:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:159:  If/else bodies with multiple statements require braces  [readability/braces] [4]
+mysh2.c:159:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:159:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:161:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:161:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:161:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:162:  If/else bodies with multiple statements require braces  [readability/braces] [4]
+mysh2.c:162:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:162:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:164:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:165:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:167:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:170:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:170:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:173:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:173:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:174:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:174:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:176:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:182:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:183:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:184:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:185:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:186:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:187:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:188:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:189:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:193:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:194:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:195:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:196:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:197:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+mysh2.c:203:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+mysh2.c:203:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+mysh2.c:204:  Mismatching spaces inside () in while  [whitespace/parens] [5]
+mysh2.c:205:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:208:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:209:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:210:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:213:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:215:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:219:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:222:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:223:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:224:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:227:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:228:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:229:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:230:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:230:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:231:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:232:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:232:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:232:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:240:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:241:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:242:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:243:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:244:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:244:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:245:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:245:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:247:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:249:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:249:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:253:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:253:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:254:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:255:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:255:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:255:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:257:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:258:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:265:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:265:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:266:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:268:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:268:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:270:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:270:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:274:  Lines should very rarely be longer than 100 characters  [whitespace/line_length] [4]
+mysh2.c:274:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:276:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:279:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:280:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:280:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:281:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:281:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:282:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:283:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+mysh2.c:284:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:285:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+mysh2.c:285:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:285:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:287:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:288:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:289:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:291:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:294:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:296:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:300:  Missing space after ,  [whitespace/comma] [3]
+mysh2.c:300:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:302:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+mysh2.c:302:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+mysh2.c:303:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:304:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:306:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:307:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:308:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:309:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:311:  Missing spaces around ==  [whitespace/operators] [3]
+mysh2.c:312:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:312:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:312:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:313:  If/else bodies with multiple statements require braces  [readability/braces] [4]
+mysh2.c:313:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:313:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:315:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:315:  Missing spaces around <  [whitespace/operators] [3]
+mysh2.c:315:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:316:  If/else bodies with multiple statements require braces  [readability/braces] [4]
+mysh2.c:316:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:316:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:318:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:319:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:321:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+mysh2.c:324:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:324:  Missing space after ;  [whitespace/semicolon] [3]
+mysh2.c:327:  Missing spaces around >  [whitespace/operators] [3]
+mysh2.c:327:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:328:  Missing spaces around !=  [whitespace/operators] [3]
+mysh2.c:328:  Missing space before {  [whitespace/braces] [5]
+mysh2.c:330:  Missing spaces around =  [whitespace/operators] [4]
+mysh2.c:336:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:337:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:338:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:339:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:340:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:341:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:342:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:343:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:347:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:348:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:349:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:350:  Should have a space between // and comment  [whitespace/comments] [4]
+mysh2.c:351:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+Done processing mysh2.c
+Total errors found: 249
+Failure: /u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py returned incorrect status code. Expected 0 got 1
+
+
+test linttest FAILED (0 of 5)
+ (Lint test for C programming style)
+ /u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py returned incorrect status code. Expected 0 got 1
+
+starting valgrindtest
+
+**********************************************************************
+
+Test valgrindtest
+Valgrind test for memory management
+
+**********************************************************************
+Running valgrind
+/usr/bin/valgrind --show-reachable=yes --xml=yes --child-silent-after-fork=yes --undef-value-errors=no --xml-file=/tmp/tmpIR4ktw/p/vg_summary.xml ./mysh /u/c/s/cs537-1/ta/tests/2a/valgrind/in
+ls
+CPPLINT.cfg
+batch.sh
+batch2
+err
+in
+makefile
+mysh
+mysh.c
+mysh.c~
+mysh2
+mysh2.c
+mysh2.c~
+mysh3.c
+out
+runtests.log
+vg_summary.xml
+echo 5
+5
+sleep 3&
+j
+3 : sleep 3
+myw 3
+3005934 : Job 3 terminated
+Valgrind completed in 3.37641406059 seconds
+
+
+test valgrindtest PASSED (10 of 10)
+ (Valgrind test for memory management)
+
+starting args
+
+**********************************************************************
+
+Test args
+too many arguments to mysh
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/args/in /bogus
+
+
+test args PASSED (2 of 2)
+ (too many arguments to mysh)
+
+starting args2
+
+**********************************************************************
+
+Test args2
+invalid batch file path
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /bogus
+
+
+test args2 PASSED (2 of 2)
+ (invalid batch file path)
+
+starting interactive
+
+**********************************************************************
+
+Test interactive
+simple command in interactive mode
+
+**********************************************************************
+Running mysh with 1 command: see /u/c/s/cs537-1/ta/tests/2a/interactive/in
+
+/tmp/tmpIR4ktw/p/./mysh
+
+
+test interactive PASSED (2 of 2)
+ (simple command in interactive mode)
+
+starting interactive2
+
+**********************************************************************
+
+Test interactive2
+multiple commands in interactive mode
+
+**********************************************************************
+Running mysh with multiple commands: see /u/c/s/cs537-1/ta/tests/2a/interactive2/in
+
+/tmp/tmpIR4ktw/p/./mysh
+
+
+test interactive2 PASSED (3 of 3)
+ (multiple commands in interactive mode)
+
+starting blank
+
+**********************************************************************
+
+Test blank
+an empty batch file
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/blank/in
+
+
+test blank PASSED (2 of 2)
+ (an empty batch file)
+
+starting basic
+
+**********************************************************************
+
+Test basic
+run a single command with no arguments
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/basic/in
+
+
+test basic PASSED (2 of 2)
+ (run a single command with no arguments)
+
+starting parseargs
+
+**********************************************************************
+
+Test parseargs
+a command with an argument
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs/in
+
+
+test parseargs PASSED (2 of 2)
+ (a command with an argument)
+
+starting parseargs2
+
+**********************************************************************
+
+Test parseargs2
+a commands with many arguments
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs2/in
+Failure: ./mysh gave incorrect standard output.
+Expected: "/bin/ls -l --human-readable --no-group -i -p -Q --reverse /u/\ntotal 54K\n2040660101 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"z\"/\n2040660099 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"y\"/\n2040660097 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"x\"/\n2040660095 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"w\"/\n2040660093 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"v\"/\n2040660091 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"u\"/\n2040660089 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"t\"/\n2040660087 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"s\"/\n2040660085 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"r\"/\n2040660083 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"q\"/\n2040660081 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"p\"/\n2040660079 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"o\"/\n2040660077 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"n\"/\n2040660075 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"m\"/\n2040660073 drwxr-xr-x 29 root 2.0K Jul 10  2006 \"l\"/\n2040660071 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"k\"/\n2040660069 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"j\"/\n2040660067 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"i\"/\n2040660065 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"h\"/\n2040660063 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"g\"/\n2040660061 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"f\"/\n2040660059 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"e\"/\n2040660057 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"d\"/\n2040660055 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"c\"/\n2040660053 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"b\"/\n2040660051 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"a\"/\n2040660049 drwxr-xr-x 29 root 2.0K Apr  7  1995 \"_\"/\necho 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n"
+Got:      "/bin/ls -l --human-readable --no-group -i -p -Q --reverse /u/\ntotal 54K\n2040660101 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"z\"/\n2040660099 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"y\"/\n2040660097 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"x\"/\n2040660095 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"w\"/\n2040660093 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"v\"/\n2040660091 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"u\"/\n2040660089 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"t\"/\n2040660087 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"s\"/\n2040660085 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"r\"/\n2040660083 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"q\"/\n2040660081 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"p\"/\n2040660079 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"o\"/\n2040660077 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"n\"/\n2040660075 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"m\"/\n2040660073 drwxr-xr-x 29 troot 2.0K Jul 10  2006 \"l\"/\n2040660071 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"k\"/\n2040660069 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"j\"/\n2040660067 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"i\"/\n2040660065 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"h\"/\n2040660063 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"g\"/\n2040660061 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"f\"/\n2040660059 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"e\"/\n2040660057 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"d\"/\n2040660055 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"c\"/\n2040660053 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"b\"/\n2040660051 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"a\"/\n2040660049 drwxr-xr-x 29 troot 2.0K Apr  7  1995 \"_\"/\necho 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n"
+
+
+test parseargs2 FAILED (0 of 2)
+ (a commands with many arguments)
+ ./mysh gave incorrect standard output.
+
+starting parseargs3
+
+**********************************************************************
+
+Test parseargs3
+A command with illegal arguments
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs3/in
+
+
+test parseargs3 PASSED (2 of 2)
+ (A command with illegal arguments)
+
+starting parseargs4
+
+**********************************************************************
+
+Test parseargs4
+An invalid command
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs4/in
+
+
+test parseargs4 PASSED (4 of 4)
+ (An invalid command)
+
+starting exit
+
+**********************************************************************
+
+Test exit
+The builtin exit command
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/exit/in
+
+
+test exit PASSED (2 of 2)
+ (The builtin exit command)
+
+starting illegal
+
+**********************************************************************
+
+Test illegal
+Builtin command with illegal arguments
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/illegal/in
+
+
+test illegal PASSED (2 of 2)
+ (Builtin command with illegal arguments)
+
+starting whitespace
+
+**********************************************************************
+
+Test whitespace
+Builtin command with extra whitespace
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace/in
+
+
+test whitespace PASSED (2 of 2)
+ (Builtin command with extra whitespace)
+
+starting whitespace2
+
+**********************************************************************
+
+Test whitespace2
+Several commands with extra whitespace
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace2/in
+
+
+test whitespace2 PASSED (3 of 3)
+ (Several commands with extra whitespace)
+
+starting whitespace3
+
+**********************************************************************
+
+Test whitespace3
+Several commands with &
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace3/in
+
+
+test whitespace3 PASSED (3 of 3)
+ (Several commands with &)
+
+starting job
+
+**********************************************************************
+
+Test job
+Simple j command with one background process
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job/in
+
+
+test job PASSED (3 of 3)
+ (Simple j command with one background process)
+
+starting job2
+
+**********************************************************************
+
+Test job2
+Simple j command with extra whitespace and &
+
+**********************************************************************
+/tmp/tmpIR4ktw/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job2/in

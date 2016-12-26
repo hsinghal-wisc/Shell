@@ -1,0 +1,281 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <limits.h>
+#include <sys/time.h>
+#include <sys/wait.h>
+
+int main(int argc, char *argv[]) {
+int jid = 1, pid = -1, rc, status = 0,status2 = 0,p[100000]={0},map[100000]={0},map2[100000]={0}; 
+FILE* fd;
+char ch[1000][515];
+int i,j;
+
+struct timeval stop, start;
+char *cmd = (char *)malloc(515 * sizeof(char));
+char *cmd2 = (char *)malloc(515 * sizeof(char));
+if(argc > 2 || argc < 1)
+{fprintf(stderr,"Usage: mysh [batchFile]\n");fflush(stderr);exit(1);}
+else if(argc == 2) {
+fd = fopen(strdup(argv[1]), "r");
+if(fd == NULL)
+{
+fprintf(stderr,"Error: Cannot open file %s\n",argv[1]);
+fflush(stderr);
+exit(1);}
+while(fgets(cmd, 512, fd) != NULL) {
+if(cmd[0]=='\0') break;
+if (cmd[0]=='\n') {write(1,"\n",strlen("\n"));continue;}
+
+strcpy(cmd2,cmd);
+cmd[ strlen(cmd) -1 ] = '\0';
+cmd2[ strlen(cmd2) -1 ] = '\0';
+if(strlen(cmd)>512)
+{fprintf(stderr,"An error has occurred\n");fflush(stderr);continue;}
+argc=0;
+fprintf(stdout,"%s\n",cmd);
+fflush(stdout);
+
+char *arg = strtok(cmd, " ");
+while (arg != NULL) {
+argv[ argc++ ] = strdup( arg );
+arg = strtok(NULL, " ");
+}
+argv[ argc ] = NULL;
+
+while((pid = waitpid(-1, &status, WNOHANG))>0){
+if(pid!=-1 && p[pid]){
+p[pid] = 0;
+pid=-1;
+}}
+
+if ((!strcmp (argv[0],"exit") || !strcmp (argv[0],"exit&")) && (argc == 1 || (argc == 2 && !strcmp(argv[1],"&"))))
+exit(0);
+
+
+if ((!strcmp (argv[0],"j") || !strcmp (argv[0],"j&")) && (argc == 1 || (argc == 2 && !strcmp(argv[1],"&"))))
+{
+for(i=0;i<1000;i++)
+if(p[map2[i]])
+{
+fprintf(stdout,"%d : %s\n",i,ch[i]);
+fflush(stdout);
+}
+continue;
+}
+if ((!strcmp (argv[0],"myw") || !strcmp (argv[0],"myw&")) && (argc == 2 || (argc == 3 && !strcmp(argv[2],"&"))))
+{
+if(!map2[atoi(argv[1])])
+{fprintf(stderr,"Invalid jid %s\n",argv[1]);fflush(stderr);continue;}
+if(!p[map2[atoi(argv[1])]])
+{fprintf(stdout,"0 : Job %s terminated\n",argv[1]);fflush(stdout);continue;}
+gettimeofday(&start, NULL);
+(void) waitpid(map2[atoi(argv[1])], &status, 0);
+gettimeofday(&stop, NULL);
+fprintf(stdout,"%lu : Job %s terminated\n",1000000 * (stop.tv_sec - start.tv_sec) + stop.tv_usec - start.tv_usec,argv[1]);
+fflush(stdout);
+p[map2[atoi(argv[1])]]=0;
+continue;
+}
+if(argc == 1 && (!strcmp(argv[0],"&") || !strcmp(argv[0],"&&"))) continue;
+if (!strcmp (argv[argc - 1],"&"))
+  {
+ status2=1;argv[argc-1] = NULL;argc--;}
+
+int s =strlen(argv[argc-1]);
+if(argv[argc-1][s-1]=='&')
+{argv[argc-1][s-1]='\0';status2 = 1;}
+
+if (!strcmp (argv[argc - 1],"&"))
+{
+status2=1;argv[argc-1] = NULL;}
+rc = fork();
+if(rc == 0) {
+if(execvp( argv[0], argv ) == -1)
+{fprintf(stderr,"%s: Command not found\n",argv[0]);fflush(stdout);continue;}
+}
+else {
+map[rc]=jid;
+map2[jid]=rc;
+jid++;
+i=0;
+int k=0;
+
+  while(cmd2[i] == ' '){
+        i++;
+    }
+  for(j = 0;cmd2[i] != '\0'; i++){
+      if(cmd2[i]==' ' && cmd2[i-1]==' '){
+          continue;
+      }
+      if(cmd2[i]=='&'){
+          k=j;
+      }
+      ch[map[rc]][j] = cmd2[i];
+      j++;
+    }
+  while(ch[map[rc]][k-1] == ' ')
+        k--;
+ch[map[rc]][k]='\0';
+   
+
+if(status2)
+{p[rc]=1;status2=0;
+}
+
+while((pid = waitpid(-1, &status, WNOHANG))>0){
+if(pid!=-1 && p[pid]){
+p[pid] = 0;
+pid=-1;
+}}
+
+if(!p[rc])
+(void) waitpid(rc, &status, 0);
+}
+
+
+//if(feof(fd))
+//break;
+//fflush(fd);
+//cmd[0]='\0';
+}
+
+
+
+
+}
+
+
+else {
+while(1) {
+printf("mysh> ");
+if (fgets(cmd, 512, stdin) == NULL) break;
+if(cmd[0]=='\0') break;
+if (cmd[0]=='\n') {write(1,"\n",strlen("\n"));continue;}
+
+strcpy(cmd2,cmd);
+cmd[ strlen(cmd) -1 ] = '\0';
+cmd2[ strlen(cmd2) -1 ] = '\0';
+if(strlen(cmd)>512)
+{fprintf(stderr,"An error has occurred\n");fflush(stderr);continue;}
+argc=0;
+fprintf(stdout,"%s\n",cmd);
+fflush(stdout);
+
+char *arg = strtok(cmd, " ");
+while (arg != NULL) {
+argv[ argc++ ] = strdup( arg );
+arg = strtok(NULL, " ");
+}
+argv[ argc ] = NULL;
+
+while((pid = waitpid(-1, &status, WNOHANG))>0){
+if(pid!=-1 && p[pid]){
+p[pid] = 0;
+pid=-1;
+}}
+
+if ((!strcmp (argv[0],"exit") || !strcmp (argv[0],"exit&")) && (argc == 1 || (argc == 2 && !strcmp(argv[1],"&"))))
+exit(0);
+
+
+if ((!strcmp (argv[0],"j") || !strcmp (argv[0],"j&")) && (argc == 1 || (argc == 2 && !strcmp(argv[1],"&"))))
+{
+for(i=0;i<1000;i++)
+if(p[map2[i]])
+{
+fprintf(stdout,"%d : %s\n",i,ch[i]);
+fflush(stdout);
+}
+continue;
+}
+if ((!strcmp (argv[0],"myw") || !strcmp (argv[0],"myw&")) && (argc == 2 || (argc == 3 && !strcmp(argv[2],"&"))))
+{
+if(!map2[atoi(argv[1])])
+{fprintf(stderr,"Invalid jid %s\n",argv[1]);fflush(stderr);continue;}
+if(!p[map2[atoi(argv[1])]])
+{fprintf(stdout,"0 : Job %s terminated\n",argv[1]);fflush(stdout);continue;}
+gettimeofday(&start, NULL);
+(void) waitpid(map2[atoi(argv[1])], &status, 0);
+gettimeofday(&stop, NULL);
+fprintf(stdout,"%lu : Job %s terminated\n",1000000 * (stop.tv_sec - start.tv_sec) + stop.tv_usec - start.tv_usec,argv[1]);
+fflush(stdout);
+p[map2[atoi(argv[1])]]=0;
+continue;
+}
+if(argc == 1 && (!strcmp(argv[0],"&") || !strcmp(argv[0],"&&"))) continue;
+if (!strcmp (argv[argc - 1],"&"))
+  {
+ status2=1;argv[argc-1] = NULL;argc--;}
+
+int s =strlen(argv[argc-1]);
+if(argv[argc-1][s-1]=='&')
+{argv[argc-1][s-1]='\0';status2 = 1;}
+
+if (!strcmp (argv[argc - 1],"&"))
+{
+status2=1;argv[argc-1] = NULL;}
+rc = fork();
+if(rc == 0) {
+if(execvp( argv[0], argv ) == -1)
+{fprintf(stderr,"%s: Command not found\n",argv[0]);fflush(stdout);continue;}
+}
+else {
+map[rc]=jid;
+map2[jid]=rc;
+jid++;
+i=0;
+int k=0;
+
+  while(cmd2[i] == ' '){
+        i++;
+    }
+  for(j = 0;cmd2[i] != '\0'; i++){
+      if(cmd2[i]==' ' && cmd2[i-1]==' '){
+          continue;
+      }
+      if(cmd2[i]=='&'){
+          k=j;
+      }
+      ch[map[rc]][j] = cmd2[i];
+      j++;
+    }
+  while(ch[map[rc]][k-1] == ' ')
+        k--;
+ch[map[rc]][k]='\0';
+   
+
+if(status2)
+{p[rc]=1;status2=0;
+}
+
+while((pid = waitpid(-1, &status, WNOHANG))>0){
+if(pid!=-1 && p[pid]){
+p[pid] = 0;
+pid=-1;
+}}
+
+if(!p[rc])
+(void) waitpid(rc, &status, 0);
+}
+
+
+//if(feof(fd))
+//break;
+//fflush(fd);
+//cmd[0]='\0';
+}
+
+
+
+
+
+}
+}
+fclose(fd);
+free(cmd);
+free(cmd2);
+return 0;
+}

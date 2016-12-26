@@ -1,0 +1,587 @@
+starting build
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f mysh 
+Trying to build project using make
+make
+gcc -o mysh -Wall -g mysh.c
+
+
+test build PASSED
+ (build project using make)
+
+starting linttest
+
+**********************************************************************
+
+Test linttest
+Lint test for C programming style
+
+**********************************************************************
+/u/c/s/cs537-1/ta/tests/2a/../../lint/cpplint.py --extensions c,h mysh.c
+Done processing mysh.c
+Total errors found: 0
+
+
+test linttest PASSED (5 of 5)
+ (Lint test for C programming style)
+
+starting valgrindtest
+
+**********************************************************************
+
+Test valgrindtest
+Valgrind test for memory management
+
+**********************************************************************
+Running valgrind
+/usr/bin/valgrind --show-reachable=yes --xml=yes --child-silent-after-fork=yes --undef-value-errors=no --xml-file=/tmp/tmpZ15mHL/p/vg_summary.xml ./mysh /u/c/s/cs537-1/ta/tests/2a/valgrind/in
+ls
+a
+batch2
+batch.sh
+err
+errors.log
+in
+makefile
+mysh
+mysh2
+mysh2.c~
+mysh.c
+mysh.c~
+out
+runtests.log
+vg_summary.xml
+echo 5
+5
+sleep 3&
+j
+3 : sleep 3
+myw 3
+2999750 : Job 3 terminated
+Valgrind completed in 3.41737508774 seconds
+
+
+test valgrindtest PASSED (10 of 10)
+ (Valgrind test for memory management)
+
+starting args_
+
+**********************************************************************
+
+Test args_
+too many arguments to mysh
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/args_/in /bogus
+
+
+test args_ PASSED (2 of 2)
+ (too many arguments to mysh)
+
+starting args2_
+
+**********************************************************************
+
+Test args2_
+invalid batch file path
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /bogus
+
+
+test args2_ PASSED (2 of 2)
+ (invalid batch file path)
+
+starting interactive_
+
+**********************************************************************
+
+Test interactive_
+simple command in interactive mode
+
+**********************************************************************
+Running mysh with 1 command: see /u/c/s/cs537-1/ta/tests/2a/interactive_/in
+
+/tmp/tmpZ15mHL/p/./mysh
+
+
+test interactive_ PASSED (2 of 2)
+ (simple command in interactive mode)
+
+starting interactive2_
+
+**********************************************************************
+
+Test interactive2_
+multiple commands in interactive mode
+
+**********************************************************************
+Running mysh with multiple commands: see /u/c/s/cs537-1/ta/tests/2a/interactive2_/in
+
+/tmp/tmpZ15mHL/p/./mysh
+
+
+test interactive2_ PASSED (3 of 3)
+ (multiple commands in interactive mode)
+
+starting blank_
+
+**********************************************************************
+
+Test blank_
+an empty batch file
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/blank_/in
+
+
+test blank_ PASSED (2 of 2)
+ (an empty batch file)
+
+starting basic_
+
+**********************************************************************
+
+Test basic_
+run a single command with no arguments
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/basic_/in
+
+
+test basic_ PASSED (2 of 2)
+ (run a single command with no arguments)
+
+starting parseargs_
+
+**********************************************************************
+
+Test parseargs_
+a command with an argument
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs_/in
+
+
+test parseargs_ PASSED (2 of 2)
+ (a command with an argument)
+
+starting parseargs2_
+
+**********************************************************************
+
+Test parseargs2_
+a commands with many arguments
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs2_/in
+
+
+test parseargs2_ PASSED (2 of 2)
+ (a commands with many arguments)
+
+starting parseargs3_
+
+**********************************************************************
+
+Test parseargs3_
+A command with illegal arguments
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs3_/in
+
+
+test parseargs3_ PASSED (2 of 2)
+ (A command with illegal arguments)
+
+starting parseargs4_
+
+**********************************************************************
+
+Test parseargs4_
+An invalid command
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/parseargs4_/in
+
+
+test parseargs4_ PASSED (4 of 4)
+ (An invalid command)
+
+starting exit_
+
+**********************************************************************
+
+Test exit_
+The builtin exit command
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/exit_/in
+
+
+test exit_ PASSED (2 of 2)
+ (The builtin exit command)
+
+starting illegal_
+
+**********************************************************************
+
+Test illegal_
+Builtin command with illegal arguments
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/illegal_/in
+
+
+test illegal_ PASSED (2 of 2)
+ (Builtin command with illegal arguments)
+
+starting whitespace_
+
+**********************************************************************
+
+Test whitespace_
+Builtin command with extra whitespace
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace_/in
+
+
+test whitespace_ PASSED (2 of 2)
+ (Builtin command with extra whitespace)
+
+starting whitespace2_
+
+**********************************************************************
+
+Test whitespace2_
+Several commands with extra whitespace
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace2_/in
+
+
+test whitespace2_ PASSED (3 of 3)
+ (Several commands with extra whitespace)
+
+starting whitespace3_
+
+**********************************************************************
+
+Test whitespace3_
+Several commands with &
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/whitespace3_/in
+
+
+test whitespace3_ PASSED (3 of 3)
+ (Several commands with &)
+
+starting job_
+
+**********************************************************************
+
+Test job_
+Simple j command with one background process
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job_/in
+
+
+test job_ PASSED (3 of 3)
+ (Simple j command with one background process)
+
+starting job2_
+
+**********************************************************************
+
+Test job2_
+Simple j command with extra whitespace and &
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job2_/in
+
+
+test job2_ PASSED (4 of 4)
+ (Simple j command with extra whitespace and &)
+
+starting job3_
+
+**********************************************************************
+
+Test job3_
+j command with multiple background process and empty lines
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job3_/in
+
+
+test job3_ PASSED (5 of 5)
+ (j command with multiple background process and empty lines)
+
+starting job4_
+
+**********************************************************************
+
+Test job4_
+Call j commands multiple times
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job4_/in
+
+
+test job4_ PASSED (4 of 4)
+ (Call j commands multiple times)
+
+starting job5_
+
+**********************************************************************
+
+Test job5_
+j command with commands with extra whitespace
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/job5_/in
+
+
+test job5_ PASSED (4 of 4)
+ (j command with commands with extra whitespace)
+
+starting longline_
+
+**********************************************************************
+
+Test longline_
+maximum length line
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/longline_/in
+
+
+test longline_ PASSED (3 of 3)
+ (maximum length line)
+
+starting toolong_
+
+**********************************************************************
+
+Test toolong_
+a line that is too long
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/toolong_/in
+
+
+test toolong_ PASSED (3 of 3)
+ (a line that is too long)
+
+starting myw_
+
+**********************************************************************
+
+Test myw_
+myw with illegal argument
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/myw_/in
+
+
+test myw_ PASSED (3 of 3)
+ (myw with illegal argument)
+
+starting myw1_
+
+**********************************************************************
+
+Test myw1_
+myw with illegal argument
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/myw1_/in
+
+
+test myw1_ PASSED (3 of 3)
+ (myw with illegal argument)
+
+starting myw2_
+
+**********************************************************************
+
+Test myw2_
+Single myw
+
+**********************************************************************
+Running mysh with simple myw
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/myw2_/in
+
+
+test myw2_ PASSED (3 of 3)
+ (Single myw)
+
+starting myw3_
+
+**********************************************************************
+
+Test myw3_
+Multiple myw
+
+**********************************************************************
+Running mysh with multiple myw
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/myw3_/in
+
+
+test myw3_ PASSED (5 of 5)
+ (Multiple myw)
+
+starting myw4_
+
+**********************************************************************
+
+Test myw4_
+myw for already complete process
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/myw4_/in
+
+
+test myw4_ PASSED (3 of 3)
+ (myw for already complete process)
+
+starting background_
+
+**********************************************************************
+
+Test background_
+32 concurrently running background jobs and over 100 background jobs in total
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/background_/in
+
+
+test background_ PASSED (5 of 5)
+ (32 concurrently running background jobs and over 100 background jobs in total)
+
+starting end_
+
+**********************************************************************
+
+Test end_
+Batch file without exit
+
+**********************************************************************
+/tmp/tmpZ15mHL/p/./mysh /u/c/s/cs537-1/ta/tests/2a/end_/in
+
+
+test end_ PASSED (2 of 2)
+ (Batch file without exit)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+
+test linttest PASSED (5 of 5)
+ (Lint test for C programming style)
+
+test valgrindtest PASSED (10 of 10)
+ (Valgrind test for memory management)
+
+test args_ PASSED (2 of 2)
+ (too many arguments to mysh)
+
+test args2_ PASSED (2 of 2)
+ (invalid batch file path)
+
+test interactive_ PASSED (2 of 2)
+ (simple command in interactive mode)
+
+test interactive2_ PASSED (3 of 3)
+ (multiple commands in interactive mode)
+
+test blank_ PASSED (2 of 2)
+ (an empty batch file)
+
+test basic_ PASSED (2 of 2)
+ (run a single command with no arguments)
+
+test parseargs_ PASSED (2 of 2)
+ (a command with an argument)
+
+test parseargs2_ PASSED (2 of 2)
+ (a commands with many arguments)
+
+test parseargs3_ PASSED (2 of 2)
+ (A command with illegal arguments)
+
+test parseargs4_ PASSED (4 of 4)
+ (An invalid command)
+
+test exit_ PASSED (2 of 2)
+ (The builtin exit command)
+
+test illegal_ PASSED (2 of 2)
+ (Builtin command with illegal arguments)
+
+test whitespace_ PASSED (2 of 2)
+ (Builtin command with extra whitespace)
+
+test whitespace2_ PASSED (3 of 3)
+ (Several commands with extra whitespace)
+
+test whitespace3_ PASSED (3 of 3)
+ (Several commands with &)
+
+test job_ PASSED (3 of 3)
+ (Simple j command with one background process)
+
+test job2_ PASSED (4 of 4)
+ (Simple j command with extra whitespace and &)
+
+test job3_ PASSED (5 of 5)
+ (j command with multiple background process and empty lines)
+
+test job4_ PASSED (4 of 4)
+ (Call j commands multiple times)
+
+test job5_ PASSED (4 of 4)
+ (j command with commands with extra whitespace)
+
+test longline_ PASSED (3 of 3)
+ (maximum length line)
+
+test toolong_ PASSED (3 of 3)
+ (a line that is too long)
+
+test myw_ PASSED (3 of 3)
+ (myw with illegal argument)
+
+test myw1_ PASSED (3 of 3)
+ (myw with illegal argument)
+
+test myw2_ PASSED (3 of 3)
+ (Single myw)
+
+test myw3_ PASSED (5 of 5)
+ (Multiple myw)
+
+test myw4_ PASSED (3 of 3)
+ (myw for already complete process)
+
+test background_ PASSED (5 of 5)
+ (32 concurrently running background jobs and over 100 background jobs in total)
+
+test end_ PASSED (2 of 2)
+ (Batch file without exit)
+
+Passed 32 of 32 tests.
+Overall 32 of 32
+Points 100 of 100
